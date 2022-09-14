@@ -1,13 +1,12 @@
 import React from 'react';
 
-
-import { ShadowFonts } from './Fonts';
+import { ShadowText } from './shadow-text';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/ShadowFonts',
-  component: ShadowFonts,
+  title: 'Shadow Text',
+  component: ShadowText,
 };
 
 
-export const Shadow = () => <ShadowFonts/>
+export const example = () => <ShadowText/>

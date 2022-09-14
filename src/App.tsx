@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import './fonts/Lexend/static/Lexend-Regular.ttf';
+import './fonts/Lexend/lexend.ttf';
 
 import './App.css';
 
