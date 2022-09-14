@@ -5,6 +5,12 @@
     perspective: 20em; 
 }
 
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
 .backdrop:hover .feather {
 
     border-radius: 0%;
