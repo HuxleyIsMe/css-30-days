@@ -13,9 +13,7 @@ export const ClippedBird = () => {
         <div className="feather" id='eighth'></div>
         <div className="feather" id='ninth'></div>
         <div className="feather" id='tenth'></div>  
-     
-
-
+        {/* <div  id='eleventh'></div>   */}
     </div>
  )
 } 
