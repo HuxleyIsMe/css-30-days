@@ -64,24 +64,76 @@ perspective: 1400px;
     box-shadow: -3px 4px silver, 0.2px -8.2px silver inset;
 }
 
+.tags {
+    top: 270px;
+    left:530px;
+    position: absolute;
+    display: flex;
+    height: 120px;
+
+}
+
+.phone-container:hover ~ .tags > .labels > p {
+    opacity: 1;
+}
+
+.labels > p {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 1s;
+
+    height: 25px;
+  
+
+}
+.labels{
+
+   margin: -25px 0px 0px 5px;
+    
+    font-family: Helvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.pointers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.phone-container:hover ~ .tags > .pointers > div {
+    width: 85px;
+}
+
+
+
+.pointers > div {
+
+    transition: width 0.5s ease-in;
+    height: 3px; 
+    width: 0px;
+    background-color: white;
+}
+
 
 
 .oled {
+    opacity: 0.7;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(228deg, rgba(34, 193, 195, 1) 20%, rgb(240, 140, 0) 65%, rgba(240, 150, 10, 1) 100%);
 
+ 
+}
+
+
+
+.touch-panel {
     background-size: 20px 20px;
  
     background-image:
         linear-gradient(to right, grey 1px, transparent 1px),
         linear-gradient(to bottom, grey 1px, transparent 1px);
     
-}
-
-
-
-.touch-panel {
-
-    background: rgb(34, 193, 195);
-    background: linear-gradient(228deg, rgba(34, 193, 195, 1) 20%, rgb(240, 140, 0) 65%, rgba(240, 150, 10, 1) 100%);
 }
 
 .polarizer {
