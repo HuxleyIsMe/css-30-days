@@ -1,0 +1,152 @@
+.backdrop {
+    position: relative;
+    height: 600px;
+    width: 600px; 
+    perspective: 20em; 
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.backdrop:hover .feather {
+
+    border-radius: 0%;
+    cursor: pointer;
+    animation: comeBackTogether 3s infinite ease-out ;
+}
+
+.backdrop:hover #eleventh {
+    opacity: 100%;
+}
+
+@keyframes comeBackTogether {
+    0%{
+        top: 25%;
+        left: 25%;
+        height: 25%;
+        width: 50%
+    }
+    
+    50%{
+        top: 0%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        transform: rotate(0deg)
+    }
+
+    70% {
+        top: 0%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        transform: rotate(0deg)
+    }
+
+    100% {
+        top: 25%;
+        left: 25%;
+        height: 25%;
+        width: 50%
+    }
+}
+
+.feather {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+#first{
+    z-index: 2;
+    background-color: #3DC7F2;
+    transform: rotate(-10deg);
+
+    clip-path: polygon(0% 40%, 20% 40%, 20% 60%);
+}
+
+#second{
+    background-color: #3F3AE8;
+    transform: rotate(55deg);
+    z-index: 2;
+    clip-path: polygon(20% 40%, 40% 40%, 20% 60%);
+}
+
+#third{
+    background-color: #3D68F2;
+    transform: rotate(20deg);
+    z-index: 2;
+    clip-path: polygon(20% 60%, 40% 40%, 30% 70%);
+}
+
+#fourth{
+    background-color: #3AE8E3;
+    transform: rotate(-85deg);
+    z-index: 2;
+    clip-path: polygon(30% 70%, 40% 40%, 70% 60%);
+}
+
+#fifth{
+    background-color: #3F3AE8;
+    transform: rotate(5deg);
+    z-index: 1;
+    clip-path: polygon(40% 60%, 70% 60%, 40% 80%);
+}
+
+#sixth{
+    background-color: #3D68F2;
+    transform: rotate(90deg);
+    clip-path: polygon(40% 90%, 50% 70%, 70% 90%);
+}
+
+#seventh{
+    background-color: #3DC7F2;
+    transform: rotate(210deg);
+    clip-path: polygon(40% 40%, 80% 40%, 70% 60%);
+}
+
+#eighth{
+    background-color: #3AE8E3;
+    transform: rotate(120deg);
+    clip-path: polygon(40% 40%, 60% 20%, 80% 40%);
+}
+
+#ninth{
+    background-color: #3F3AE8;
+    transform: rotate(40deg);
+    clip-path: polygon(60% 20%, 90% 20%, 80% 40%);
+}
+
+#tenth{
+    background-color: #3D68F2;
+    transform: rotate(-10deg);
+    clip-path: polygon(60% 20%, 80% 0%, 100% 20%);
+}
+
+#eleventh {
+    opacity: 0%;
+    transition: opacity 3s;
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(238, 238, 63);
+    border: 2pt solid black;
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%;
+    top: 10%;
+    left: 80%;
+
+}
+
+
+
+
+
+
+
+
