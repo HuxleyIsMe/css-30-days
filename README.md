@@ -20,3 +20,5 @@ then
 ### notes 
 
 this repo is years old and packages need updating also its a playground for me, things are not high fidelity.
+
+This is also not using storybook fully i am aware :) 
