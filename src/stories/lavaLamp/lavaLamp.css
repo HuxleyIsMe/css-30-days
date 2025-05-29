@@ -1,26 +1,51 @@
 .backDrop {
+    position: relative;
     background:black;
     padding: 28px;
     border: 8px black;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 600px;
     width: 400px;
 }
 
-.fill {
+.lower {
     position: relative;
-    background: blue;
+    transform: translateX(-53px);
+}
+
+.bulb {
+    filter:blur(5px) sepia(1);
+    z-index:5;
+    border-radius: 50%;
+    transform: translateX(5px) translateY(-14px) translateZ(10px);
+    position: absolute;
+    height: 40px;
+    width: 100px;
+    background: white;
+
+}
+
+.fill {
+    border: 3pt solid black;
+    border-bottom: none;
+    border-top: none;
+    position: relative;
+    background: rgb(30, 30, 131);
     filter: blur(1px) brightness(200%);
-    height: 320px;
+    height: 260px;
     width: 100px;
     overflow: hidden;
     clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 
+
+
 .blob {
+    border-top: 5pt dashed rgb(30, 30, 131);
+    border-bottom: 2pt dashed white;
     filter: blur(var(--blur)) brightness(103%);
     position: absolute;
     border-radius: 50%;
@@ -34,13 +59,13 @@
     transform: translateY(calc(var(--y) - var(--speedOfBubble) - 20px)) scale(3.2, 0.5);
   }
   50% {
-    transform: translateY(calc(var(--y) - var(--speedOfBubble)) - 40px) scale(3, 1.3);
+    transform: translateY(calc(var(--y) - var(--speedOfBubble)) - 40px) scale(2, 1.3);
   }
   55% {
     transform: translateY(calc(var(--y) - var(--speedOfBubble)) - 40px) scale(3, 2.5);
   }
   75% {
-    transform: translateY(calc(var(--y) - var(--speedOfBubble)) -60px) scale(2.5, 0.4);
+    transform: translateY(calc(var(--y) - var(--speedOfBubble)) -60px) scale(2.5, 2);
   }
   100% {
     transform: translateY(calc(var(--y) - var(--speedOfBubble)) -100px) scale(1, 0);
@@ -49,24 +74,64 @@
 }
 
 
-.top {
-    width: 60px;
-    height: 80px;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+.ellipse {
+    position: absolute;
+    height: 10px;
+    background: silver;
+    width: 100px;
+    border: 3pt solid black;
+    border-radius: 50%;
+    transform: translateZ(-13px) translateY(0px);
 }
+
+.top-ell {
+    z-index: 4;
+}
+.lower-ell {
+    z-index:1;
+    transform: translateZ(-13px) translateY(70px);
+}
+.last-ell {
+    width: 106px;
+    height: 20px;
+    border: none;
+    z-index:0;
+    transform: translateZ(-13px) translateY(100px);
+}
+
+.top {
+    border-radius: 5px;
+    z-index: 1;
+    width: 64px;
+    height: 62px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%) !important;}
+
 .cone {
+    border: 3pt solid black;
     background: silver;
     clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 
 .bottom {
+    position: absolute;
+    z-index: 2;
     width: 100px;
-    height: 80px;
+    height: 75px;
+    border-top: none;
     transform: rotate(180deg)
 }
 
 .base {
-    width: 100px;
+    position: absolute;
+    z-index: 1;
+    margin-top: -9px;
+    width: 107px;
     height: 20px;
     background: silver;
+}
+
+.lower-base {
+    height: 30px;
+    z-index: 0;
+    transform: translateY(90px);
 }

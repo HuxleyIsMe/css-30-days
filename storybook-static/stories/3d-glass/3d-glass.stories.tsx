@@ -1,4 +1,3 @@
-import React from 'react'
 import { Glass } from "./3d-glass";
 
 export default {

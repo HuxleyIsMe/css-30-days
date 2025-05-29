@@ -3,7 +3,9 @@ import './lavaLamp.css';
 
 const runLavaLamp = () => {
     let isSetup = false; 
-    const COLORS = [[204, 85, 0], [233, 116, 81], [227, 150, 62], [242, 140, 40]]
+    const COLORS = [[204, 85, 0], [233, 116, 81], [227, 150, 62], [242, 140, 40], [204, 85, 0]]
+    const CONTAINER_HEIGHT = 260
+    const CONTAINER_WIDTH = 100
 
     const setup = () => {
          const fillContainer = document.getElementById('lavaContainer')
@@ -12,21 +14,24 @@ const runLavaLamp = () => {
             return
          }
 
-        let blobs = new Array(500).fill({}).map(_ => ({x : Math.ceil(Math.random() * 100), y: Math.ceil(Math.random() * 400)}));
+        let blobs = new Array(200).fill({}).map(_ => ({x : Math.ceil(Math.random() * CONTAINER_WIDTH), y: Math.ceil(Math.random() * CONTAINER_HEIGHT)}));
 
         /**
          * Here we create our blobs of lava
          * then we give them each random values for certain props that our CSS can use
          */
         blobs.forEach(blob => {
-            let color = COLORS[Math.floor(Math.random() * 4)]
-            let size = Math.floor(Math.random() * 30)
+            let color = COLORS[Math.floor(Math.random() * COLORS.length)]
+            let size = Math.floor(Math.random() * 35)
             let blobElement = document.createElement('div')
+
             // @ts-ignore
             blobElement.style.top = blob.y + 'px'
             blobElement.style.background = 'rgb(' + color.join(',') + ')';
             blobElement.style.width = size + 'px'
             blobElement.style.height = size + 'px'
+
+
             // @ts-ignore
             blobElement.style.left = blob.x + 'px'
             blobElement.setAttribute("class", "blob");
@@ -72,9 +77,13 @@ export const LavaLamp = () => {
             <div className='blob' data-x="0" data-speed="6"></div>
              <div className='blob' data-x="0" data-speed="2"></div>
         </div>
-        <div>
+        <div className='lower' >
+            <div className='bulb'></div>
             <div className="cone bottom"></div>
-            <div className='base'></div>
+            <div className="ellipse top-ell"></div>
+            <div className="ellipse lower-ell"></div>
+            <div className='base lower-base'></div>
+            <div className="ellipse last-ell"></div>
         </div>
     </div>
  )
